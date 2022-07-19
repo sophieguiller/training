@@ -31,9 +31,7 @@ class Cookbook
 
   def store_csv
     CSV.open(@csv_file_path, "wb") do |csv|
-      @recipes.each do |recipe|
-        csv << [recipe.name, recipe.description]
-      end
+      @recipes.each { |recipe| csv << [recipe.name, recipe.description] }
     end
   end
 end
